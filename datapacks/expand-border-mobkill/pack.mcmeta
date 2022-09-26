@@ -1,0 +1,6 @@
+{
+  "pack": {
+    "pack_format": 10,
+    "description": "Start with one chunck. Border expands by 1 with every kill."
+  }
+}
