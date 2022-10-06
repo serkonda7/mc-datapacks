@@ -1,0 +1,6 @@
+{
+  "pack": {
+    "pack_format": 10,
+    "description": "Start on a single block. Border expands by after every day."
+  }
+}
