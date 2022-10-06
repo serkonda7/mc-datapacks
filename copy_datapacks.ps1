@@ -16,14 +16,14 @@ function Get-DatapackDestination([string] $savegame, [string] $dp) {
 
 $datapacks = Get-ChildItem -Path ".\datapacks" -Directory
 for ($i = 0; $i -lt $datapacks.Length; $i++) {
-	Write-Output "$($i): $($datapacks[$i])"
+	Write-Output "$($i): $($datapacks[$i].Name)"
 }
 $dp_idx = Read-Host "Datapack index"
-$dp_name = $datapacks[$dp_idx]
+$pack = $datapacks[$dp_idx]
 
 $savegames = Get-ChildItem -Path $MC_SAVES -Directory
 for ($i = 0; $i -lt $savegames.Length; $i++) {
-	Write-Output "$($i): $($savegames[$i])"
+	Write-Output "$($i): $($savegames[$i].Name)"
 }
 $save_idx = Read-Host "Savegame index"
 $savegame = $savegames[$save_idx]
@@ -31,9 +31,9 @@ $savegame = $savegames[$save_idx]
 $dest = Get-DatapackDestination($savegame)
 
 if ($dryRun) {
-	Copy-Item $dp_name $dest -Force -Recurse -WhatIf
+	Copy-Item $pack $dest -Force -Recurse -WhatIf
 } else {
-	Copy-Item $dp_name $dest -Force -Recurse
+	Copy-Item $pack $dest -Force -Recurse
 }
 
-Write-Output "Copied $dp_name to $dest"
+Write-Output "Copied ´$($pack.Name)´ to ´$($savegame.Name)´."
