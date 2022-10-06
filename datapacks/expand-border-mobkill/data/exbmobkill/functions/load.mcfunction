@@ -5,6 +5,6 @@
 scoreboard objectives add should_expand totalKillCount
 
 execute as @p at @s align xyz run worldborder center ~.0 ~.0
-execute as @p run worldborder set 16
+execute as @p run worldborder set 1
 
 gamerule spawnRadius 0
