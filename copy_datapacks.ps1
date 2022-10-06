@@ -2,6 +2,10 @@
 # If a copy of the MPL was not distributed with this file,
 # You can obtain one at http://mozilla.org/MPL/2.0/.
 
+param(
+	[Switch] $dryRun
+)
+
 Set-StrictMode -Version 3.0
 
 $MC_SAVES = "$($env:APPDATA)\.minecraft\saves"
@@ -26,5 +30,10 @@ $savegame = $savegames[$save_idx]
 
 $dest = Get-DatapackDestination($savegame)
 
-Copy-Item $dp_name $dest -Force -Recurse
+if ($dryRun) {
+	Copy-Item $dp_name $dest -Force -Recurse -WhatIf
+} else {
+	Copy-Item $dp_name $dest -Force -Recurse
+}
+
 Write-Output "Copied $dp_name to $dest"
