@@ -5,9 +5,6 @@
 scoreboard objectives add last_day dummy
 scoreboard objectives add day_count dummy
 
-scoreboard players set $days last_day 0
-scoreboard players set $days day_count 0
-
 execute as @p at @s align xyz run worldborder center ~.0 ~.0
 execute as @p run worldborder set 1
 
