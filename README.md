@@ -6,9 +6,9 @@ Every folder in the [datapacks](datapacks) directory is a standalone datapack.
 Usage: copy_datapacks.ps1 [options]
 
 Options:
-  dryRun   Run without actually copying files.
+  -dryRun   Run without actually copying files.
 ```
 
 ## License
-All packs and scriptsare distributed under the Mozilla Public License v2.0.
+All packs and scripts are distributed under the Mozilla Public License v2.0.
 See [LICENSE](LICENSE) for details.

@@ -2,5 +2,4 @@
 # If a copy of the MPL was not distributed with this file,
 # You can obtain one at http://mozilla.org/MPL/2.0/.
 
-execute if score @p should_shrink_death matches 1.. run worldborder add -2
-execute if score @p should_shrink_death matches 1.. run scoreboard players remove @p should_shrink_death 1
+execute if score @p new_death matches 1.. run function bsd:handle_death
